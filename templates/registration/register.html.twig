@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 style="text-align: center">User registration</h2>
+    <div class="form" style="text-align: center; display: block; color: powderblue; font-size: 20px;">
+        {{ form_start(form) }}
+            {{ form_row(form.firstname) }}
+            {{ form_row(form.lastname) }}
+            {{ form_row(form.info) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword.first) }}
+            {{ form_row(form.plainPassword.second) }}
+
+            <button type="submit">Register</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    {% if article %}
+        {% for arti in article %}
+            {% if app.user.email != null %}
+                {{ arti.name }}
+                {{ arti.body }}
+                <a href="/article/edit/{{ arti.id }}">Edit</a>
+                <a href="/article/delete/{{ arti.id }}">Delete</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">You need to log in</a>
+            {% endif %}
+        {% endfor %}
+    {% else  %}
+        <p>No articles to show</p>
+    {% endif %}
+{% endblock %}

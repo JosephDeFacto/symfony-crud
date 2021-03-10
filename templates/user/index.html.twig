@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    {% for users in getAll %}
+       <p>Firstname: {{ users.firstname }}</p>
+    {% endfor %}
+{% endblock %}
